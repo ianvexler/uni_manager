@@ -1,0 +1,28 @@
+<nav>
+    <ul>
+        <li><%= link_to "Home", root_path, class: "nav_link" %></li>
+
+        <% if session[:logged_in].nil? || !session[:logged_in] %>
+            <li><%= link_to "Login", login_path, class: "nav_link" %></li>
+            <li><%= link_to "Sign Up", sign_up_path, class: "nav_link" %></li>
+        <% end %>
+        
+        <% if session[:logged_in] %>
+            <li><%= link_to "Modules", mods_path, class: "nav_link" %></li>
+            <li><%= link_to "Grades", grades_path, class: "nav_link" %></li>
+            <li><%= link_to "Assignments", sign_up_path, class: "nav_link" %></li>
+        <% else %>
+            <li><%= link_to "Modules", login_path, class: "nav_link" %></li>
+            <li><%= link_to "Grades", login_path, class: "nav_link" %></li>
+            <li><%= link_to "Assignments", login_path, class: "nav_link" %></li>
+        <% end %>
+
+        <% if session[:logged_in] %>
+            <li>
+            <%= form_with model: @user, url: logout_path do |form| %>
+                <%= form.submit "Logout" %>
+            <% end %>
+            </li>
+        <% end %>
+    </ul>
+</nav>

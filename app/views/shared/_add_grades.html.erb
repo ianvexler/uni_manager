@@ -1,0 +1,14 @@
+<h1>Add new grade:</h1>
+
+<%= form_with url: grades_path do |form| %>
+    <%= form.label "Assignment:" %>
+    <%= form.text_field :assignment_name %>
+
+    <%= form.label "Percentage (optional):" %>
+    <%= form.text_field :grade %>
+
+    <%= form.hidden_field :code %>
+    <%= hidden_field_tag 'code', code %>
+
+    <%= form.submit "Add" %>
+<% end %>

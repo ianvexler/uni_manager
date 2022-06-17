@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  code: MyString
+  grade_name: MyString
+  grade_percentage: 1
+  grade_credits: 1
+
+two:
+  username: MyString
+  code: MyString
+  grade_name: MyString
+  grade_percentage: 1
+  grade_credits: 1

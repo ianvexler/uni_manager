@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+<%= form_with model: @user, url: login_path do |form| %>
+    <%= form.label "Email" %>
+    <%= form.text_field :email %>
+
+    <%= form.label "Password" %>
+    <%= form.password_field :password %>
+
+    <%= form.submit "Login" %>
+<% end %>
+
+<p>Don't have an account? <%= link_to "Click here", sign_up_path %></p>

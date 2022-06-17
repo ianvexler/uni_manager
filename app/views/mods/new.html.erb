@@ -1,0 +1,18 @@
+<h1>Your modules:</h1>
+
+<% @mods = Mod.where(username: Current.user.username) %>
+<% if @mods.any? %>
+    <% @mods.all.each do |mod| %>
+        <div class="mod_table">
+        <ul>
+            <li><p>Code: <%= mod[:code] %></p></li>
+            <li><p>Name: <%= mod[:module_name] %></p></li>
+            <li><p>Year: <%= mod[:year] %></p></li>
+        </ul>
+        </div>
+    <% end %>
+<% else %>
+    <p>You have no modules</p>
+<% end %>
+
+<%= render partial: "shared/add_modules" %>

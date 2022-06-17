@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_16_004622) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_16_235856) do
+  create_table "grades", force: :cascade do |t|
+    t.string "username"
+    t.string "code"
+    t.string "grade_name"
+    t.integer "grade_percentage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mods", force: :cascade do |t|
+    t.string "username"
+    t.string "code"
+    t.string "module_name"
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "username", null: false
+    t.string "username"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false

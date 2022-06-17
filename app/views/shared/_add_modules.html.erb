@@ -1,0 +1,14 @@
+<h1>Add new module:</h1>
+
+<%= form_with url: mods_path do |form| %>
+    <%= form.label "Module code:" %>
+    <%= form.text_field :code %>
+
+    <%= form.label "Module name:" %>
+    <%= form.text_field :name %>
+
+    <%= form.label "Year:" %>
+    <%= form.text_field :year %>
+
+    <%= form.submit "Add" %>
+<% end %>
