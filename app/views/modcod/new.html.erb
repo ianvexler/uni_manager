@@ -13,10 +13,10 @@
         </ul>
     <% end %>
 
-        <p>Total out of 100%: <%= calculate_percent_max(current_username, mod[:code]) %>%<p>
+        <p>Total out of 100%: <%= calculate_percent_max(current_username, params[:code]) %>%<p>
 
-        <% percentage_available = (get_percentage_available(current_username, mod[:code])* 100).round(2) %>
-        <p>Total out of <%= percentage_available %>% available: <%= calculate_percent_relative(current_username, mod[:code]) %>%<p>
+        <% percentage_available = (get_percentage_available(current_username, params[:code])* 100).round(2) %>
+        <p>Total out of <%= percentage_available %>% available: <%= calculate_percent_relative(current_username, params[:code]) %>%<p>
 <% else %>
     <p>You have no grades for this module</p>
 <% end %>
