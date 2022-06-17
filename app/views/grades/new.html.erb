@@ -1,6 +1,7 @@
 <h1>Your Grades:</h1>
 
-<% @mods = Mod.where(username: Current.user.username) %>
+<% current_username = Current.user.username%>
+<% @mods = Mod.where(username: current_username) %>
 <% if @mods.any? %>
     <% @mods.all.each do |mod| %>
         <div class="mod_table">
@@ -10,20 +11,26 @@
             <li><p>Year: <%= mod[:year] %></p></li>
             
             <li>
-                <% @grades = Grade.where(username: Current.user.username, code: mod[:code]) %>
+                <% @grades = Grade.where(username: current_username, code: mod[:code]) %>
                 <% if @grades.any? %>
                     <% @grades.all.each do |grade| %>
                         <ul>
                             <li><p>Name: <%= grade[:grade_name] %></p></li>
                             <li><p>Percentage: <%= grade[:grade_percentage] %></p></li>
+                            <li><p>Grade(%): <%= grade[:grade_value] %></p></li>
                         </ul>
                     <% end %>
+
+                     <p>Total out of 100%: <%= calculate_percent_max(current_username, mod[:code]) %>%<p>
+
+                     <% percentage_available = (get_percentage_available(current_username, mod[:code])* 100).round(2) %>
+                     <p>Total out of <%= percentage_available %>% available: <%= calculate_percent_relative(current_username, mod[:code]) %>%<p>
                 <% else %>
                     <p>You have no grades for this module</p>
                 <% end %>
             </li>
-            
         </ul>
+        
         <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
 
         </div>

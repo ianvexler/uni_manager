@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   # Grades routes
   get "grades", to: "grades#new"
   post "grades", to: "grades#create"
+
+  # Specific module routes
+  get "modcod", to: "modcod#new"
 end 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_16_235856) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_151026) do
   create_table "grades", force: :cascade do |t|
     t.string "username"
     t.string "code"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_16_235856) do
     t.integer "grade_percentage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "grade_value"
   end
 
   create_table "mods", force: :cascade do |t|

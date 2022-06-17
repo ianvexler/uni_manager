@@ -1,15 +1,16 @@
 class GradesController < ApplicationController
     def new
-        @grade_username = session[:user_username]
     end
 
     def create
+        @grade_username = session[:user_username]
         @grade_code = params[:code]
         @grade_name = params[:assignment_name]
-        @grade_percentage = params[:grade]
+        @grade_percentage = params[:grade_percentage]
+        @grade_value = params[:grade_value]
 
         if percentage_below_max
-            Grade.create(username: @grade_username, code: @grade_code, grade_name: @grade_name, grade_percentage: @grade_percentage)
+            Grade.create(username: @grade_username, code: @grade_code, grade_name: @grade_name, grade_percentage: @grade_percentage, grade_value: @grade_value)
         else
             # Maybe flash?
         end
@@ -29,7 +30,7 @@ class GradesController < ApplicationController
         end
 
         # Checks if total percentage sum is greater than 100
-        if total_percentagae > 100
+        if total_percentage > 100
             return false
         else
             return true

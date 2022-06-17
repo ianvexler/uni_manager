@@ -5,6 +5,7 @@ class CreateGrades < ActiveRecord::Migration[7.0]
       t.string :code
       t.string :grade_name
       t.integer :grade_percentage
+      t.integer :grade_value
 
       t.timestamps
     end

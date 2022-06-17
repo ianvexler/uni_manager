@@ -9,6 +9,8 @@
             <li><p>Name: <%= mod[:module_name] %></p></li>
             <li><p>Year: <%= mod[:year] %></p></li>
         </ul>
+
+        <p>View the details of this module <%= link_to "here", modcod_path(code: mod[:code]) %></p>
         </div>
     <% end %>
 <% else %>

@@ -4,8 +4,11 @@
     <%= form.label "Assignment:" %>
     <%= form.text_field :assignment_name %>
 
-    <%= form.label "Percentage (optional):" %>
-    <%= form.text_field :grade %>
+    <%= form.label "Percentage:" %>
+    <%= form.text_field :grade_percentage %>
+
+    <%= form.label "Value (optional):" %>
+    <%= form.text_field :grade_value %>
 
     <%= form.hidden_field :code %>
     <%= hidden_field_tag 'code', code %>
