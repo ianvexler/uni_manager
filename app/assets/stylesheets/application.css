@@ -1,15 +1,111 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* ----- General ----- */
+ 
+body {
+    background-color: rgb(37, 29, 58);
+    margin: 0px;
+}
+
+main {
+    padding: 0px 2%;
+}
+
+html, a {
+    font-family: Montserrat,sans-serif;
+    font-size: 1.125rem;
+    color: #dcdcdc;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.flash_alert {
+    background-color: rgb(231, 171, 121);
+}
+
+/* ----- header ---- */
+
+#header {
+    font-size: 1.3em;
+    text-align: left;
+    padding-left: 2%;
+}
+
+/* ----- nav ----- */
+
+nav {
+    width: 100%;
+    background-color: white;
+}
+
+nav ul li {
+    padding: 15px 2%;
+    display: inline-block;
+}
+
+nav a {
+    color: black;
+}
+
+nav a:hover {
+    color: rgb(109, 85, 167);
+}   
+
+.nav_fake_button {
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: 1rem;;
+    font-weight: 400;
+    padding: 0.65rem 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#sign_up_button {
+    background-color: rgb(179, 61, 90);
+}
+
+#sign_up_button:hover {
+    color: rgb(210, 210, 210);
+    background-color: rgb(150, 51, 76);
+}
+
+#login_button {
+    background-color: rgb(118, 43, 84);
+}
+
+#login_button:hover {
+    color: rgb(210, 210, 210);
+    background-color: rgb(86, 32, 62);
+}
+
+#logout {
+    background-color: rgb(179, 61, 90);
+    border: 1px solid;
+    border-radius: 6px;
+    font-size: 1rem;;
+    font-weight: 400;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#logout:hover {
+    color: rgb(36, 36, 36);
+}
+
+/* ---- Module table ---- */
+
+.mod-table ul li {
+    display: inline-block;
+}

@@ -33,6 +33,7 @@
         
         <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
 
+        <p>View more details of this module <%= link_to "here", modcod_path(code: mod[:code]) %></p>
         </div>
     <% end %>
 <% else %>

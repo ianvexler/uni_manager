@@ -11,7 +11,7 @@
 
     <% @mods = Mod.where(username: Current.user.username) %>
     <% if @mods.any? %>
-        <div class="mod_table">
+        <div class="mod-table">
         <ul>
             <% @mods.all.each do |mod| %>
                     <li>

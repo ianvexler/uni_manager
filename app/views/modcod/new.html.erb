@@ -20,3 +20,5 @@
 <% else %>
     <p>You have no grades for this module</p>
 <% end %>
+
+ <%= render partial: "shared/add_grades", locals: {code: params[:code]} %>
