@@ -9,6 +9,15 @@ main {
     padding: 0px 2%;
 }
 
+.inside_section {
+    padding: 10px 4%;
+}
+
+.inside_section h1 {
+    margin-top: 0px;
+    padding-top: 0.67em;
+}
+
 html, a {
     font-family: Montserrat,sans-serif;
     font-size: 1.125rem;
@@ -19,6 +28,25 @@ html, a {
 a {
     text-decoration: none;
     font-size: 1.2em;
+}
+
+h1 {
+    margin: 0px;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 0px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-weight: 300;
+}
+
+h4 {
+    margin: 0px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-weight: 300;
 }
 
 .alignleft {
@@ -48,8 +76,12 @@ nav {
     background-color: white;
 }
 
+nav ul {
+    margin-bottom: 0px;
+}
+
 nav ul li {
-    padding: 15px 2%;
+    padding: 10px 2%;
     display: inline-block;
 }
 
@@ -104,8 +136,109 @@ nav a:hover {
     color: rgb(36, 36, 36);
 }
 
-/* ---- Module table ---- */
+/* ---- Footer ---- */
+
+footer {
+    padding: 20px 2%;
+}
+
+/* ---- First section ---- */
+
+.first_section {
+    margin: 0px -3%;
+    background-color: rgb(233, 233, 224);
+    background-position: 0px -2%;
+}
+
+.first_section {
+    color: black;
+}
+
+/* ---- Module Table ---- */
 
 .mod-table ul li {
+    padding: 10px 0px;
+    display: block;
+    list-style-type: none;
+}
+
+.mod-table ul li p {
+    margin: 2px;
+}
+
+.main_module {
+    margin: 30px 2%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.main_module ul li {
+    list-style-type: none;
+}
+
+.main_module ul li h3 {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.main_module ul li h3 a{
+    color: black;
+}
+
+.main_module ul li h3 a:hover{
+    color: rgb(109, 85, 167);
+}
+
+/* ---- Grade Table ---- */
+
+.grade-table ul li {
+    padding: 10px 0px;
+    list-style-type: none;
+}
+
+.grade-table ul li p {
+    margin: 2px;
+}
+
+.single_grade {
+    margin: 30px 2%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.single_grade ul li {
     display: inline-block;
 }
+
+.single_grade ul li {
+    list-style-type: none;
+}
+
+.single_grade ul li h3 {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.single_grade ul li h3 a{
+    color: black;
+}
+
+.single_grade ul li h3 a:hover{
+    color: rgb(109, 85, 167);
+}
+
+.single_grade .alignright {
+    margin-right: 20px;
+}
+
+.single_grade .alignright li{
+    margin-left: 20px;
+}
+
+/* ---- ModCod ---- */
+
+
+/* ---- Colours ---- */
+/* Cream colour: rgb(233, 233, 224);

@@ -1,20 +1,29 @@
-<h1>Your modules:</h1>
+<div class="first_section">
+    <div class="inside_section">
+        <h1>Your Modules:</h1>
 
-<% @mods = Mod.where(username: Current.user.username) %>
-<% if @mods.any? %>
-    <% @mods.all.each do |mod| %>
-        <div class="mod_table">
-        <ul>
-            <li><p>Code: <%= mod[:code] %></p></li>
-            <li><p>Name: <%= mod[:module_name] %></p></li>
-            <li><p>Year: <%= mod[:year] %></p></li>
-        </ul>
+        <% @mods = Mod.where(username: Current.user.username) %>
 
-        <p>View more details of this module <%= link_to "here", modcod_path(code: mod[:code]) %></p>
-        </div>
-    <% end %>
-<% else %>
-    <p>You have no modules</p>
-<% end %>
+        <% if @mods.any? %>
+            <div class="mod_table">
+                <% @mods.all.each do |mod| %>
+                    <div class="main_module">
+                        <ul>
+                            <li><h3><%= link_to mod[:code], modcod_path(code: mod[:code]) %></h3></li>
+                            <li><p><%= mod[:module_name] %></p></li>
+                            <li><p>Year: <%= mod[:year] %></p></li>
+                        </ul>
+                    </div>
+                <% end %>
+            </div>
+        <% else %>
+            <p>You have no modules</p>
+        <% end %>
+    <div>
+    
+    <button type="button" id="add_module_button">Add Module</button>
+    <p id="testP"></p>
 
-<%= render partial: "shared/add_modules" %>
+    <%= render partial: "shared/add_modules" %>
+
+</div>

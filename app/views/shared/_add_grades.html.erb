@@ -1,5 +1,7 @@
 <h1>Add new grade:</h1>
 
+<button type="button" id="close_button">Close</button>
+
 <%= form_with url: grades_path do |form| %>
     <%= form.label "Assignment:" %>
     <%= form.text_field :assignment_name %>

@@ -1,5 +1,7 @@
 <h1>Add new module:</h1>
 
+<button type="button" id="close_button">Close</button>
+
 <%= form_with url: mods_path do |form| %>
     <%= form.label "Module code:" %>
     <%= form.text_field :code %>
