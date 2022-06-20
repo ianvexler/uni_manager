@@ -201,6 +201,31 @@ footer {
     color: rgb(109, 85, 167);
 }
 
+.mod_module {
+    padding: 10px 0px;
+    margin: 30px 2%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.mod_module ul li {
+    list-style-type: none;
+}
+
+.mod_module ul li h3 {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.mod_module ul li h3 a{
+    color: black;
+}
+
+.mod_module ul li h3 a:hover{
+    color: rgb(109, 85, 167);
+}
+
 /* ---- Grade Table ---- */
 
 .grade-table ul li {

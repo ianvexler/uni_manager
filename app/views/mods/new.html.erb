@@ -7,7 +7,7 @@
         <% if @mods.any? %>
             <div class="mod_table">
                 <% @mods.all.each do |mod| %>
-                    <div class="main_module">
+                    <div class="mod_module">
                         <ul>
                             <li><h3><%= link_to mod[:code], modcod_path(code: mod[:code]) %></h3></li>
                             <li><p><%= mod[:module_name] %></p></li>
