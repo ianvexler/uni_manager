@@ -3,10 +3,13 @@
 body {
     background-color: rgb(37, 29, 58);
     margin: 0px;
+    overflow-x: hidden;
 }
 
 main {
     padding: 0px 2%;
+    padding-left: 0%;
+    width: 100%;
 }
 
 .inside_section {
@@ -81,7 +84,7 @@ nav ul {
 }
 
 nav ul li {
-    padding: 10px 2%;
+    padding: 20px 2%;
     display: inline-block;
 }
 
@@ -98,7 +101,7 @@ nav a:hover {
     border-radius: 6px;
     font-size: 1rem;;
     font-weight: 400;
-    padding: 0.65rem 1rem;
+    padding: 0.75rem 1rem;
     color: #fff;
     cursor: pointer;
 }
@@ -121,13 +124,17 @@ nav a:hover {
     background-color: rgb(86, 32, 62);
 }
 
+#logout_li {
+    padding: 0px 2%;
+}
+
 #logout {
     background-color: rgb(179, 61, 90);
     border: 1px solid;
     border-radius: 6px;
     font-size: 1rem;;
     font-weight: 400;
-    padding: 0.75rem 1rem;
+    padding: 10px 1rem!important;
     color: #fff;
     cursor: pointer;
 }
@@ -145,7 +152,7 @@ footer {
 /* ---- First section ---- */
 
 .first_section {
-    margin: 0px -3%;
+    width: 100%;
     background-color: rgb(233, 233, 224);
     background-position: 0px -2%;
 }
@@ -154,16 +161,100 @@ footer {
     color: black;
 }
 
-.link_to_page {
+.link_to_page1 {
     font-size: 1.125rem;
     font-weight: 300;
     color: black;
     border-bottom: solid black 1px;
 }
 
-.link_to_page:hover {
+.link_to_page1:hover {
     color: rgb(109, 85, 167);
+    border-bottom: solid rgb(109, 85, 167) 1px;
 }  
+
+/* ---- Second section ---- */
+
+.second_section {
+    width: 100%;
+    background-color: rgb(179, 61, 90);
+    background-position: 0px -2%;
+}
+
+.second_section {
+    color: white;
+}
+
+.link_to_page2 {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: white;
+    border-bottom: solid white 1px;
+}
+
+.link_to_page2:hover {
+    color: black;
+    border-bottom: solid black 1px;
+}  
+
+/* ---- Login/Signup Form ---- */
+
+.session_form {
+    min-width: 200px;
+    width: 50%;
+}
+
+.session_form h1 {
+    margin-bottom: 20px;
+}
+
+.session_form form input {
+    width: 90%;
+    padding: 5px 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    font-weight: 200;
+    height: 25px;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid black 1px;
+    transition: ease-out 0.15s;
+}
+
+.session_form form input:hover {
+    border-bottom: solid rgb(37, 29, 58) 3px;
+    background-color: rgba(211, 211, 211, 0.252);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: ease-in 0.15s;
+}
+
+.session_form form input:focus {
+    border-bottom: solid rgb(37, 29, 58) 3px;
+    outline: none;
+}
+
+.session_form form label {
+    width: 90%;
+    padding: 5px 0px;
+    display: inline-block;
+}
+
+#submit_button {
+    background-color: white!important;
+    border: black solid 1px;
+    border-radius: 4px;
+    height: 2em!important;
+    width: 10%!important;
+    margin-top: 10px;
+    padding: 5px 0!important;
+    border: 1px solid black!important;
+}
+
+#submit_button:hover {
+    background-color: rgb(217, 217, 217)!important;
+}
 
 /* ---- Module Table ---- */
 
@@ -228,17 +319,26 @@ footer {
 
 /* ---- Grade Table ---- */
 
-.grade-table ul li {
+.grade_table {
+    margin: 20px;
+}
+
+.grade_table ul {
+    list-style: none;
+}
+
+.grade_table ul li {
     padding: 10px 0px;
     list-style-type: none;
 }
 
-.grade-table ul li p {
+.grade_table ul li p {
     margin: 2px;
 }
 
 .single_grade {
-    margin: 30px 2%;
+    margin: 0px 2%;
+    margin-bottom: 30px;
     border: 0.5px solid black;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
@@ -281,8 +381,8 @@ footer {
     z-index: 999;
     backdrop-filter: blur(4px);
     background-color: #2f303d3a;
-    position: absolute;
-    height: 100vh;
+    position: fixed;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0;
@@ -291,12 +391,13 @@ footer {
 
 #popup_form {
     z-index: 1000;
+    border: solid black 1px;
     border-radius: 10px;
-    padding: 10px 5%;
+    padding: 20px 5%;
     background-color: #DAEAF1;
     width: 50%;
     height: 60vh;
-    position:absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -317,7 +418,25 @@ footer {
     font-size: 0.9em;
     font-weight: 200;
     height: 25px;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid black 1px;
+    transition: ease-out 0.15s;
 }
+
+#popup_form form input:hover {
+    border-bottom: solid rgb(37, 29, 58) 3px;
+    background-color: rgba(211, 211, 211, 0.252);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: ease-in 0.15s;
+}
+
+#popup_form form input:focus {
+    border-bottom: solid rgb(37, 29, 58) 3px;
+    outline: none;
+}
+
 
 #popup_form form label {
     width: 90%;
@@ -326,19 +445,19 @@ footer {
 }
 
 #submit_button {
-    background-color: white;
+    background-color: white!important;
     border: black solid 1px;
     border-radius: 4px;
     height: 2em!important;
     width: 10%!important;
     margin-top: 10px;
     padding: 5px 0!important;
+    border: 1px solid black!important;
 }
 
 #submit_button:hover {
-    background-color: rgb(171, 171, 171);
+    background-color: rgb(217, 217, 217)!important;
 }
-
 
 /* ---- Colours ---- */
 /* Cream colour: rgb(233, 233, 224);

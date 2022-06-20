@@ -18,7 +18,7 @@
         <% end %>
 
         <% if session[:logged_in] %>
-            <li>
+            <li id="logout_li">
             <%= form_with model: @user, url: logout_path do |form| %>
                 <%= form.submit "Logout", class: "nav_button", id: "logout" %>
             <% end %>

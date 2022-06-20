@@ -1,25 +1,31 @@
-<h1>Sign Up</h1>
+<div class="first_section">
+    <div class="inside_section">
+        <div class="session_form">
+            <h1>Sign Up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-    <% if @user.errors.any? %>
-        <% @user.errors.full_messages.each do |message| %>
-            <div> 
-                <%= message %> 
-        <% end %>
-            </div> 
-    <% end %>
+            <%= form_with model: @user, url: sign_up_path do |form| %>
+                <% if @user.errors.any? %>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <div> 
+                            <%= message %> 
+                    <% end %>
+                        </div> 
+                <% end %>
 
-    <%= form.label "Email" %>
-    <%= form.text_field :email %>
+                <%= form.label "Email" %>
+                <%= form.text_field :email %>
 
-    <%= form.label "Username" %>
-    <%= form.text_field :username %>
+                <%= form.label "Username" %>
+                <%= form.text_field :username %>
 
-    <%= form.label "Password" %>
-    <%= form.password_field :password %>
+                <%= form.label "Password" %>
+                <%= form.password_field :password %>
 
-    <%= form.label "Confirm Password" %>
-    <%= form.password_field :password_confirmation %>
+                <%= form.label "Confirm Password" %>
+                <%= form.password_field :password_confirmation %>
 
-    <%= form.submit "Sign Up" %>
-<% end %>
+                <%= form.submit "Sign Up", id: "submit_button" %>
+            <% end %>
+        </div>
+    </div>
+</div>

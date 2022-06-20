@@ -7,40 +7,53 @@
         <% @mods = Mod.where(username: current_username) %>
         <% if @mods.any? %>
             <% @mods.all.each do |mod| %>
-                <div class="mod_table">
+                <div class="grade_table">
                     <ul>
-                        <li><p>Code: <%= mod[:code] %></p></li>
-                        <li><p>Name: <%= mod[:module_name] %></p></li>
+                        <li><h3><%= mod[:code] %></h3></li>
+                        <li><p><%= mod[:module_name] %></p></li>
                         <li><p>Year: <%= mod[:year] %></p></li>
                         
                         <li>
                             <% @grades = Grade.where(username: current_username, code: mod[:code]) %>
                             <% if @grades.any? %>
                                 <% @grades.all.each do |grade| %>
-                                    <ul>
-                                        <li><p>Name: <%= grade[:grade_name] %></p></li>
-                                        <li><p>Percentage: <%= grade[:grade_percentage] %></p></li>
-                                        <li><p>Grade(%): <%= grade[:grade_value] %></p></li>
-                                    </ul>
+                                    <div class="single_grade">
+                                        <ul>
+                                            <li><h4><%= grade[:grade_name] %></h4></li>
+                                            <div class="alignright">
+                                                <li><p>Weight: <%= grade[:grade_percentage] %>%</p></li>
+                                                <li><p>Grade: <%= grade[:grade_value] %>%</p></li>
+                                            </div>
+                                        </ul>
+                                    </div>
                                 <% end %>
+
+                                <div data-controller="add">
+                                    <button data-action="click->add#open", id="submit_button">Add Grade</button>
+                                </div> 
+                                
+                                <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
+                                <br>
 
                                 <p>Total out of 100%: <%= calculate_percent_max(current_username, mod[:code]) %>%<p>
 
                                 <% percentage_available = (get_percentage_available(current_username, mod[:code])* 100).round(2) %>
                                 <p>Total out of <%= percentage_available %>% available: <%= calculate_percent_relative(current_username, mod[:code]) %>%<p>
                             <% else %>
-                                <p>You have no grades for this module</p>
+                                <p><b>You have no grades for this module</b></p>
+                                <br>
+
+                                <div data-controller="add">
+                                    <button data-action="click->add#open", id="submit_button">Add Grade</button>
+                                </div> 
+                                
+                                <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
                             <% end %>
+
+                            <br>
+                            <p>View more details of this module <%= link_to "here", modcod_path(code: mod[:code]) %></p>
                         </li>
                     </ul>
-
-                    <div data-controller="add">
-                        <button data-action="click->add#open", id="submit_button">Add Grade</button>
-                    </div> 
-                    
-                    <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
-
-                    <p>View more details of this module <%= link_to "here", modcod_path(code: mod[:code]) %></p>
                 </div>
             <% end %>
         <% else %>
