@@ -3,6 +3,12 @@
         <div class="session_form">
             <h1>Login</h1>
 
+            <% if flash[:alert] %>
+                <div class="flash_alert" role="alert">
+                    <p><%= flash[:alert].split(//).join("<br>").html_safe %></p>
+                </div>
+            <% end %>
+
             <%= form_with model: @user, url: login_path do |form| %>
                 <%= form.label "Email" %>
                 <%= form.text_field :email %>

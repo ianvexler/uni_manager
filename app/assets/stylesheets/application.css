@@ -149,6 +149,20 @@ footer {
     padding: 20px 2%;
 }
 
+/* ---- Flash Alerts ---- */
+
+.flash_alert {
+    width: 90%;
+    padding: 4px 2%;
+    margin-bottom: 20px;
+    background-color: rgb(252, 111, 111);
+    line-height: 1.5em;
+}
+
+.flash_alert p {
+    margin: 10px;
+}
+
 /* ---- First section ---- */
 
 .first_section {
@@ -325,6 +339,7 @@ footer {
 
 .grade_table ul {
     list-style: none;
+    padding-left: 0px;
 }
 
 .grade_table ul li {
@@ -339,9 +354,14 @@ footer {
 .single_grade {
     margin: 0px 2%;
     margin-bottom: 30px;
+    margin-left: 0px;
     border: 0.5px solid black;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.single_grade ul {
+    margin: 18px 2%;
 }
 
 .single_grade ul li {

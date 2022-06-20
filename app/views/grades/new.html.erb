@@ -3,7 +3,7 @@
 
         <h1>Your Grades:</h1>
 
-        <% current_username = Current.user.username%>
+        <% current_username = session[:user_username] %>
         <% @mods = Mod.where(username: current_username) %>
         <% if @mods.any? %>
             <% @mods.all.each do |mod| %>

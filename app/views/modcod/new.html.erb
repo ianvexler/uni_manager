@@ -2,7 +2,7 @@
     <div class="inside_section">
         <h1><%= params[:code] %></h1>
 
-        <% current_username = Current.user.username%>
+        <% current_username = session[:user_username]%>
         <% @grades = Grade.where(username: current_username, code: params[:code]) %>
 
         <% if @grades.any? %>

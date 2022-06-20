@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
     end
 
     def create
+        flash[:alert] = []
+
         user = User.find_by(email: params[:email])
         if user.present? && user.authenticate(params[:password])
             session[:user_id] = user.id
@@ -10,10 +12,10 @@ class SessionsController < ApplicationController
             session[:user_email] = user.email
             session[:logged_in] = true
 
-            redirect_to root_path, notice: "Logged in succesfully"
+            redirect_to root_path
         else
-            flash[:alert] = "Invalid inputs"
-            render :new 
+            flash[:alert] << "Invalid inputs"
+            redirect_to login_path
         end
     end
 
@@ -23,6 +25,6 @@ class SessionsController < ApplicationController
         session[:user_email] = nil
         session[:logged_in] = nil
 
-        redirect_to root_path, notice: "Logged out successfully"
+        redirect_to root_path
     end
 end

@@ -2,7 +2,7 @@
     <div class="inside_section">
         <h1>Your Modules:</h1>
 
-        <% @mods = Mod.where(username: Current.user.username) %>
+        <% @mods = Mod.where(username: session[:user_username]) %>
 
         <% if @mods.any? %>
             <div class="mod_table">
