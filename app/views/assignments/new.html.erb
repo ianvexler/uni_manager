@@ -1,0 +1,11 @@
+<div id="testForm">
+    <%= form_with url: mods_path do |form| %>
+        <%= form.label "Code:" %>
+        <%= form.text_field :code %>
+        <%= form.label "Name:" %>
+        <%= form.text_field :name %>
+        <%= form.label "Year:" %>
+        <%= form.text_field :year %>
+        <%= form.submit "Add" %>
+    <% end %>
+</div>

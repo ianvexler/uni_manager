@@ -19,14 +19,18 @@
                     </div>
                 <% end %>
 
-                    <% percentage_available = (get_percentage_available(current_username, params[:code])* 100).round(2) %>
-                    <p>Total out of <%= percentage_available %>%: <%= calculate_percent_relative(current_username, params[:code]) %>%<p>
+                <% percentage_available = (get_percentage_available(current_username, params[:code])* 100).round(2) %>
+                <p>Total out of <%= percentage_available %>%: <%= calculate_percent_relative(current_username, params[:code]) %>%<p>
 
-                    <p>Total out of 100%: <%= calculate_percent_max(current_username, params[:code]) %>%<p>
+                <p>Total out of 100%: <%= calculate_percent_max(current_username, params[:code]) %>%<p>
             </div>
         <% else %>
             <p>You have no grades for this module</p>
         <% end %>
+
+        <div data-controller="add">
+            <button data-action="click->add#open", id="submit_button">Add Module</button>
+        </div>
 
         <%= render partial: "shared/add_grades", locals: {code: params[:code]} %>
     </div>

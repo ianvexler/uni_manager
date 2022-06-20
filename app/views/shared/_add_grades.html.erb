@@ -1,19 +1,25 @@
-<h1>Add new grade:</h1>
+<div id="blur_background">
+    <div id="popup_form">
+        <div data-controller="add">
+            <button id="submit_button" class="alignright" data-action="click->add#close">Close</button>
+        </div>
 
-<button type="button" id="close_button">Close</button>
+        <h1>Add new grade:</h1>
 
-<%= form_with url: grades_path do |form| %>
-    <%= form.label "Assignment:" %>
-    <%= form.text_field :assignment_name %>
+        <%= form_with url: grades_path do |form| %>
+            <%= form.label "Assignment:" %>
+            <%= form.text_field :assignment_name %>
 
-    <%= form.label "Percentage:" %>
-    <%= form.text_field :grade_percentage %>
+            <%= form.label "Percentage:" %>
+            <%= form.text_field :grade_percentage %>
 
-    <%= form.label "Value (optional):" %>
-    <%= form.text_field :grade_value %>
+            <%= form.label "Value (optional):" %>
+            <%= form.text_field :grade_value %>
 
-    <%= form.hidden_field :code %>
-    <%= hidden_field_tag 'code', code %>
+            <%= form.hidden_field :code %>
+            <%= hidden_field_tag 'code', code %>
 
-    <%= form.submit "Add" %>
-<% end %>
+            <%= form.submit "Add" %>
+        <% end %>
+    </div>
+</div>

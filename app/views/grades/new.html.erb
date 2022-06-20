@@ -30,6 +30,10 @@
                 <% end %>
             </li>
         </ul>
+
+        <div data-controller="add">
+            <button data-action="click->add#open", id="submit_button">Add Grade</button>
+        </div> 
         
         <%= render partial: "shared/add_grades", locals: {code: mod[:code]} %>
 

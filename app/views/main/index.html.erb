@@ -2,43 +2,47 @@
     <p>Organize your modules, grades and assignments.</p>
 <% end %>
 
-<% if session[:logged_in] %>
-    <h1>Modules</h1>
+<div class="first_section">
+    <div class="inside_section">
+        <% if session[:logged_in] %>
+            <h1>Modules</h1>
 
-    <% @mods = Mod.where(username: Current.user.username) %>
-    <% if @mods.any? %>
-        <div class="mod-table">
-        <ul>
-            <% @mods.all.each do |mod| %>
-                    <li>
-                        <div class="main_module">
-                            <ul>
-                                <li><h3><%= link_to mod[:code], sign_up_path, class: "nav_link" %></h3></li>
-                            </ul>
-                        </div>
-                    </li>
+            <% @mods = Mod.where(username: Current.user.username) %>
+            <% if @mods.any? %>
+                <div class="mod-table">
+                <ul>
+                    <% @mods.all.each do |mod| %>
+                            <li>
+                                <div class="main_module">
+                                    <ul>
+                                        <li><h3><%= link_to mod[:code], sign_up_path %></h3></li>
+                                    </ul>
+                                </div>
+                            </li>
+                    <% end %>
+                </ul>
+                </div>
+                
+                <p>Take a look at all your modules <%= link_to "here", mods_path, class: "link_to_page" %></p>
+            <% else %>
+                <p>You have no modules, add some <%= link_to "here", mods_path, class: "link_to_page" %></p>
             <% end %>
-        </ul>
         </div>
-        
-        <p>Take a look at all your modules <%= link_to "here", mods_path, class: "nav_link" %></p>
-    <% else %>
-        <p>You have no modules, add some <%= link_to "here", mods_path, class: "nav_link" %></p>
-    <% end %>
+    </div>
 
     <h1>Grades</h1>
     <p> Get to know you averages and how much more you need to pass the year! Here you can add, delete and edit your grades for a module.
-    <p>Take a look at all your grades <%= link_to "here", grades_path, class: "nav_link" %></p>
+    <p>Take a look at all your grades <%= link_to "here", grades_path, class: "link_to_page" %></p>
 
     <h1>Assignments</h1>
-    <p>Take a look at all your assignments <%= link_to "here", sign_up_path, class: "nav_link" %></p>
+    <p>Take a look at all your assignments <%= link_to "here", sign_up_path, class: "link_to_page" %></p>
 <% else %>
     <h1>Modules</h1>
-    <p>Take a look at all your modules <%= link_to "here", login_path, class: "nav_link" %></p>
+    <p>Take a look at all your modules <%= link_to "here", login_path, class: "link_to_page" %></p>
 
     <h1>Grades</h1>
-    <p>Take a look at all your grades <%= link_to "here", login_path, class: "nav_link" %></p>
+    <p>Take a look at all your grades <%= link_to "here", login_path, class: "link_to_page" %></p>
     
     <h1>Assignments</h1>
-    <p>Take a look at all your assignment <%= link_to "here", login_path, class: "nav_link" %></p>
+    <p>Take a look at all your assignment <%= link_to "here", login_path, class: "link_to_page" %></p>
 <% end %>

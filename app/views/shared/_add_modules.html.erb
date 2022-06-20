@@ -1,16 +1,19 @@
-<h1>Add new module:</h1>
+<div id="blur_background">
+    <div id="popup_form">
+        <div data-controller="add">
+            <button id="submit_button" class="alignright" data-action="click->add#close">Close</button>
+        </div>
 
-<button type="button" id="close_button">Close</button>
+        <h1>Add module:</h1>
 
-<%= form_with url: mods_path do |form| %>
-    <%= form.label "Module code:" %>
-    <%= form.text_field :code %>
-
-    <%= form.label "Module name:" %>
-    <%= form.text_field :name %>
-
-    <%= form.label "Year:" %>
-    <%= form.text_field :year %>
-
-    <%= form.submit "Add" %>
-<% end %>
+        <%= form_with url: mods_path do |form| %>
+            <%= form.label "Code:" %>
+            <%= form.text_field :code %>
+            <%= form.label "Name:" %>
+            <%= form.text_field :name %>
+            <%= form.label "Year:", id: "year_input" %>
+            <%= form.text_field :year %>
+            <%= form.submit "Add", id: "submit_button" %>
+        <% end %>
+    </div>
+</div>

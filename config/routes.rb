@@ -26,4 +26,7 @@ Rails.application.routes.draw do
 
   # Specific module routes
   get "modcod", to: "modcod#new"
+
+  # Assignment routes
+  get "assignments", to: "assignments#new"
 end 

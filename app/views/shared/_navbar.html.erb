@@ -5,7 +5,7 @@
         <% if session[:logged_in] %>
             <li><%= link_to "Modules", mods_path, class: "nav_link" %></li>
             <li><%= link_to "Grades", grades_path, class: "nav_link" %></li>
-            <li><%= link_to "Assignments", sign_up_path, class: "nav_link" %></li>
+            <li><%= link_to "Assignments", assignments_path, class: "nav_link" %></li>
         <% else %>
             <li><%= link_to "Modules", login_path, class: "nav_link" %></li>
             <li><%= link_to "Grades", login_path, class: "nav_link" %></li>

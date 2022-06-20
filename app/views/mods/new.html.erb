@@ -20,9 +20,10 @@
             <p>You have no modules</p>
         <% end %>
     <div>
-    
-    <button type="button" id="add_module_button">Add Module</button>
-    <p id="testP"></p>
+
+    <div data-controller="add">
+        <button data-action="click->add#open", id="submit_button">Add Module</button>
+    </div>
 
     <%= render partial: "shared/add_modules" %>
 
