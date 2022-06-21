@@ -1,0 +1,25 @@
+<div id="blur_background">
+    <div id="popup_form">
+        <div data-controller="add">
+            <button id="submit_button" class="alignright" data-action="click->add#close">Close</button>
+        </div>
+
+        <h1>Add module:</h1>
+
+        <% if flash[:alert] %>
+            <div class="flash_alert" role="alert">
+                <p><%= flash[:alert].split(//).join("<br>").html_safe %></p>
+            </div>
+        <% end %>
+
+        <%= form_with url: mods_path do |form| %>
+            <%= form.label "Code:" %>
+            <%= form.text_field :code %>
+            <%= form.label "Name:" %>
+            <%= form.text_field :name %>
+            <%= form.label "Year:", class: "year_input" %>
+            <%= form.text_field :year %>
+            <%= form.submit "Add", id: "submit_button" %>
+        <% end %>
+    </div>
+</div>

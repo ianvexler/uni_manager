@@ -2,20 +2,20 @@
     <div class="inside_section">
             <h1>Modules</h1>
 
-            <% @mods = Mod.where(username: Current.user) %>
+            <% @mods = Mod.where(username: session[:user_username]) %>
             <% if @mods.any? %>
                 <div class="mod-table">
-                <ul>
-                    <% @mods.all.each do |mod| %>
-                            <li>
-                                <div class="main_module">
-                                    <ul>
-                                        <li><h3><%= link_to mod[:code], modcod_path(code: mod[:code]) %></h3></li>
-                                    </ul>
-                                </div>
-                            </li>
-                    <% end %>
-                </ul>
+                    <ul style="padding-left: 0px;">
+                        <% @mods.all.each do |mod| %>
+                                <li>
+                                    <div class="main_module">
+                                        <ul>
+                                            <li><h3><%= link_to mod[:code], modcod_path(code: mod[:code]) %></h3></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                        <% end %>
+                    </ul>
                 </div>
                 
                 <p>Take a look at all your modules <%= link_to "here", mods_path, class: "link_to_page1" %></p>

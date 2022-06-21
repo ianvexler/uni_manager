@@ -6,6 +6,12 @@
 
         <h1>Add new grade:</h1>
 
+        <% if flash[:alert] %>
+            <div class="flash_alert" role="alert">
+                <p><%= flash[:alert].split(//).join("<br>").html_safe %></p>
+            </div>
+        <% end %>
+
         <%= form_with url: grades_path do |form| %>
             <%= form.label "Assignment:" %>
             <%= form.text_field :assignment_name %>

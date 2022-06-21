@@ -281,6 +281,10 @@ footer {
     margin: 2px;
 }
 
+#index_mod_table .mod-table ul {
+    padding-left: 0px!important;
+}
+
 .main_module {
     margin: 30px 2%;
     border: 0.5px solid black;
