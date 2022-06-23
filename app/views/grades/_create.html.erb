@@ -1,16 +1,16 @@
-<div id="blur_background">
-    <div id="popup_form">
+<div id="add_blur_background">
+    <div id="add_popup_form">
         <div data-controller="add">
             <button id="submit_button" class="alignright" data-action="click->add#close">Close</button>
         </div>
 
         <h1>Add new grade:</h1>
 
-        <% if flash[:alert] %>
-            <div class="flash_alert" role="alert">
-                <p><%= flash[:alert].split(//).join("<br>").html_safe %></p>
-            </div>
-        <% end %>
+        <div id="flash_pane">
+            <% if flash[:alert] && flash[:alert].any? %>
+                <%= render partial: "alerts/alert" %>
+            <% end %>
+        </div>
 
         <%= form_with url: grades_path do |form| %>
             <%= form.label "Assignment:" %>

@@ -12,6 +12,12 @@
                             <li><h3><%= link_to mod[:code], modcod_path(code: mod[:code]) %></h3></li>
                             <li><p><%= mod[:module_name] %></p></li>
                             <li><p>Year: <%= mod[:year] %></p></li>
+                            
+                            <div data-controller="edit">
+                                <button data-action="click->edit#open", id="edit_button">Edit</button>
+                            </div>
+
+                            <%= render partial: "edit", locals: {og_code: mod[:code], og_name: mod[:module_name], og_year: mod[:year]} %>
                         </ul>
                     </div>
                 <% end %>
@@ -22,9 +28,8 @@
     <div>
 
     <div data-controller="add">
-        <button data-action="click->add#open", id="submit_button">Add Module</button>
+        <button data-action="click->add#open", id="create_button">Add Grade</button>
     </div>
-
-    <%= render partial: "shared/add_modules" %>
-
+    
+    <%= render partial: "create" %>
 </div>

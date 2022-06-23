@@ -17,16 +17,18 @@ Rails.application.routes.draw do
   post "logout", to: "sessions#delete"
 
   # Modules routes
-  get "mods", to: "mods#new"
-  post "mods", to: "mods#create"
+  get "mods", to: "mods#index"
+  post "mods/create", to: "mods#create"
+  post "mods/edit", to: "mods#edit"
 
   # Grades routes
-  get "grades", to: "grades#new"
+  get "grades", to: "grades#view"
   post "grades", to: "grades#create"
 
   # Specific module routes
-  get "modcod", to: "modcod#new"
+  get "modcod", to: "modcod#index"
+  post "modcod", to: "modcod#edit"
 
   # Assignment routes
-  get "assignments", to: "assignments#new"
+  get "assignments", to: "assignments#view"
 end 

@@ -1,0 +1,37 @@
+<div id="edit_blur_background" class="blur_background">
+    <div id="edit_popup_form" class="popup_form">
+        <div data-controller="edit">
+            <button id="submit_button" class="alignright" data-action="click->edit#close">Close</button>
+        </div>
+
+        <h1>Edit module:</h1>
+
+        <% if flash[:alert] %>
+            <div class="flash_alert" role="alert">
+                <p><%= flash[:alert].split(//).join("<br>").html_safe %></p>
+            </div>
+        <% end %>
+
+        <%= form_with url: "/mods/edit" do |form| %>
+            <%= form.label "Code:" %>
+            <%= form.text_field :code %>
+
+            <%= form.hidden_field :og_code %>
+            <%= hidden_field_tag 'og_code', og_code %>
+
+            <%= form.label "Name:" %>
+            <%= form.text_field :name %>
+
+            <%= form.hidden_field :og_name %>
+            <%= hidden_field_tag 'og_name', og_name %>
+
+            <%= form.label "Year:", class: "year_input" %>
+            <%= form.text_field :year %>
+
+            <%= form.hidden_field :og_year %>
+            <%= hidden_field_tag 'og_year', og_year %>
+
+            <%= form.submit "Edit", id: "submit_button" %>
+        <% end %>
+    </div>
+</div>

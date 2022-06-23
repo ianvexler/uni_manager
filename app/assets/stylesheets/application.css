@@ -401,7 +401,7 @@ footer {
 
 /* ---- Popup Form ---- */
 
-#blur_background {
+.blur_background {
     z-index: 999;
     backdrop-filter: blur(4px);
     background-color: #2f303d3a;
@@ -410,10 +410,17 @@ footer {
     width: 100%;
     top: 0;
     left: 0;
+}
+
+#add_blur_background {
     display: none;
 }
 
-#popup_form {
+#edit_blur_background {
+    display: none;
+}
+
+.popup_form {
     z-index: 1000;
     border: solid black 1px;
     border-radius: 10px;
@@ -425,16 +432,15 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
     color: black;
     box-shadow: 10px 10px 8px #888888;
 }
 
-#popup_form h1 {
+.popup_form h1 {
     margin-bottom: 20px;
 }
 
-#popup_form form input {
+.popup_form form input {
     width: 90%;
     padding: 5px 5px;
     display: inline-block;
@@ -448,7 +454,7 @@ footer {
     transition: ease-out 0.15s;
 }
 
-#popup_form form input:hover {
+.popup_form form input:hover {
     border-bottom: solid rgb(37, 29, 58) 3px;
     background-color: rgba(211, 211, 211, 0.252);
     border-top-left-radius: 5px;
@@ -456,16 +462,24 @@ footer {
     transition: ease-in 0.15s;
 }
 
-#popup_form form input:focus {
+.popup_form form input:focus {
     border-bottom: solid rgb(37, 29, 58) 3px;
     outline: none;
 }
 
 
-#popup_form form label {
+.popup_form form label {
     width: 90%;
     padding: 5px 0px;
     display: inline-block;
+}
+
+#edit_popup_form {
+    display: none;
+}
+
+#add_popup_form {
+    display: none;
 }
 
 #submit_button {
@@ -480,6 +494,38 @@ footer {
 }
 
 #submit_button:hover {
+    background-color: rgb(217, 217, 217)!important;
+}
+
+/* ---- Buttons ----*/
+
+#create_button {
+    background-color: white!important;
+    border: black solid 1px;
+    border-radius: 4px;
+    height: 2em!important;
+    width: 10%!important;
+    margin-top: 10px;
+    padding: 5px 0!important;
+    border: 1px solid black!important;
+}
+
+#create_button:hover {
+    background-color: rgb(217, 217, 217)!important;
+}
+
+#edit_button {
+    background-color: white!important;
+    border: black solid 1px;
+    border-radius: 4px;
+    height: 2em!important;
+    width: 10%!important;
+    margin-top: 10px;
+    padding: 5px 0!important;
+    border: 1px solid black!important;
+}
+
+#edit_button:hover {
     background-color: rgb(217, 217, 217)!important;
 }
 

@@ -11,6 +11,7 @@ class RegistrationsController < ApplicationController
 
         if !check_user_params
             flash[:alert] << ["Invalid inputs"]
+            is_valid = false
         end
 
         if !check_username(params[:user][:username])
@@ -53,19 +54,19 @@ class RegistrationsController < ApplicationController
     # Checks that all parameters have been given
     private
     def check_user_params
-        if !params[:user][:username].present?
+        if params[:user][:username].empty?
             return false
         end
 
-        if !params[:user][:email].present?
+        if params[:user][:email].empty?
             return false
         end
 
-        if !params[:user][:password].present?
+        if params[:user][:password].empty?
             return false
         end
 
-        if !params[:user][:email].present?
+        if params[:user][:email].empty?
             return false
         end
 
